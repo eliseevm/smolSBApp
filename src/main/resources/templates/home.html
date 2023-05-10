@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Главная страница</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/styles/index.css}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+
+</head>
+
+<body class="d-flex flex-column h-100">
+
+<header class="p-3 mb-3 border-bottom header__wrapper"></header>
+
+<main class="flex-shrink-0">
+    <div class="container introduction">
+        <h1 class="introduction__head">КАПИТАН НЕМО</h1>
+        <span class="introduction__head">Ваш помощник в общении с медицинскими службами в экстренных ситуациях</span>
+        <p class="introduction__text lead"> Этот сервис поможет Вам сохранить жизнь в ситуациях,
+            когда Вы не можете самостоятельно ответить на вопросы работников службы спасения или скорой медицинской
+            помощи.
+            Пожалуйста, ознакомьтесь с правилами оказания услуги сервиса спасения.
+        </p>
+        <form th:method="GET" th:action="@{/select/select}">
+            <input class="btn btn-primary main-btn introduction__btn" type="submit" value="Вход"/>
+        </form>
+
+        <form th:method="GET" th:action="@{/select/register}">
+            <input class="btn btn-primary main-btn introduction__btn" type="submit" value="Регистрация"/>
+        </form>
+
+        <form th:method="GET" th:action="@{/index/termsOfUse}">
+            <input class="btn btn-primary main-btn introduction__btn" type="submit" value="Правила"/>
+        </form>
+
+        <form th:method="GET" th:action="@{https://www.google.ru/}">
+            <input class="btn btn-primary main-btn introduction__btn" type="submit" value="Выход"/>
+        </form>
+    </div>
+</main>
+
+<footer class="footer mt-auto py-3 bg-light main-footer"></footer>
+
+<script th:src="@{/scripts/footer.js}"></script>
+<script th:src="@{/scripts/header.js}"></script>
+
+</body>
+</html>
+
+

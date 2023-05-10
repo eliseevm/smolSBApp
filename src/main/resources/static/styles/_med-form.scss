@@ -1,0 +1,23 @@
+.med-form {
+
+  &__head {
+    color: $main;
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 1.7rem;
+  }
+
+  &__error {
+    color: #f01453d4;
+    font-size: 14px;
+  }
+
+  &__help {
+    align-self: center;
+  }
+
+  &__label {
+    color: $main;
+  }
+
+}

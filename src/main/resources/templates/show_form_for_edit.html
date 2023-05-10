@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование данных о пользователе</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/index/update}" th:object="${editform}">
+    <label for="username">Enter username: </label>
+    <input type="text" th:field="*{username}" id="username"/>
+    <div style="color:red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">username error</div>
+    <br/>
+    <br/>
+    <label for="password">Enter password: </label>
+    <input type="text" th:field="*{password}" id="password"/>
+    <div style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">password error</div>
+    <br/>
+    <br/>
+    <label for="surname">Enter surname: </label>
+    <input type="text" th:field="*{surname}" id="surname"/>
+    <div style="color:red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">surname error</div>
+    <br/>
+    <br/>
+    <label for="email">Enter email: </label>
+    <input type="text" th:field="*{email}" id="email"/>
+    <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">email error</div>
+    <br/>
+    <br/>
+    <label for="birthday">Enter birthday: </label>
+    <input type="text" th:field="*{birthday}" id="birthday"/>
+    <div style="color:red" th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}">birthday error</div>
+    <br/>
+    <br/>
+    <label for="medic_polys">Enter medic_polys: </label>
+    <input type="text" th:field="*{medic_polys}" id="medic_polys"/>
+    <div style="color:red" th:if="${#fields.hasErrors('medic_polys')}" th:errors="*{medic_polys}">Medic_polys error
+    </div>
+    <br/>
+    <br/>
+    <label for="emergency_phone">Enter emergency_phone: </label>
+    <input type="text" th:field="*{emergency_phone}" id="emergency_phone"/>
+    <div style="color:red" th:if="${#fields.hasErrors('emergency_phone')}" th:errors="*{emergency_phone}">
+        Emergency_phone error
+    </div>
+    <br/>
+    <br/>
+    <label for="place_of_residence">Enter place_of_residence: </label>
+    <input type="text" th:field="*{place_of_residence}" id="place_of_residence"/>
+    <div style="color:red" th:if="${#fields.hasErrors('place_of_residence')}" th:errors="*{place_of_residence}">
+        Place_of_residence error
+    </div>
+    <br/>
+    <br/>
+    <label for="rh_factor">Enter rh_factor: </label>
+    <input type="text" th:field="*{rh_factor}" id="rh_factor"/>
+    <div style="color:red" th:if="${#fields.hasErrors('rh_factor')}" th:errors="*{rh_factor}">Rh_factor error</div>
+    <br/>
+    <br/>
+    <label for="blood_type">Enter blood_type: </label>
+    <input type="text" th:field="*{blood_type}" id="blood_type"/>
+    <div style="color:red" th:if="${#fields.hasErrors('blood_type')}" th:errors="*{blood_type}">Blood_type error</div>
+    <br/>
+    <br/>
+    <label for="allergy">Enter allergy: </label>
+    <input type="text" th:field="*{allergy}" id="allergy"/>
+    <div style="color:red" th:if="${#fields.hasErrors('allergy')}" th:errors="*{allergy}">Allergy error</div>
+    <br/>
+    <br/>
+    <label for="medical_contraindications">Enter medical_contraindications: </label>
+    <input type="text" th:field="*{medical_contraindications}" id="medical_contraindications"/>
+    <div style="color:red" th:if="${#fields.hasErrors('medical_contraindications')}"
+         th:errors="*{medical_contraindications}">medical_contraindications error
+    </div>
+    <br/>
+    <br/>
+    <label for="chronic_diseases">Enter chronic_diseases: </label>
+    <input type="text" th:field="*{chronic_diseases}" id="chronic_diseases"/>
+    <div style="color:red" th:if="${#fields.hasErrors('chronic_diseases')}" th:errors="*{chronic_diseases}">
+        Chronic_diseases error
+    </div>
+    <br/>
+    <br/>
+    <label for="metal_implants">Enter metal_implants: </label>
+    <input type="text" th:field="*{metal_implants}" id="metal_implants"/>
+    <div style="color:red" th:if="${#fields.hasErrors('metal_implants')}" th:errors="*{metal_implants}">
+        Metal_implants error
+    </div>
+    <br/>
+    <br/>
+    <label for="electronic_implants">Enter electronic_implants: </label>
+    <input type="text" th:field="*{electronic_implants}" id="electronic_implants"/>
+    <div style="color:red" th:if="${#fields.hasErrors('electronic_implants')}"
+         th:errors="*{electronic_implants}">Electronic_implants error
+    </div>
+    <br/>
+    <br/>
+    <label for="necessary_medicines">Enter necessary_medicines: </label>
+    <input type="text" th:field="*{necessary_medicines}" id="necessary_medicines"/>
+    <div style="color:red" th:if="${#fields.hasErrors('necessary_medicines')}"
+         th:errors="*{necessary_medicines}">Mecessary_medicines error
+    </div>
+    <br/>
+    <br/>
+    <input type="submit" value="Сохранить !"/>
+</form>
+
+</body>
+</html>

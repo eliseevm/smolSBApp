@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Правила использования сервиса с переходом на регистрацию</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/styles/index.css}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+
+</head>
+
+<body class="d-flex flex-column h-100">
+
+<header class="p-3 mb-3 border-bottom header__wrapper"></header>
+
+
+<main class="flex-shrink-0">
+    <div class="container terms">
+
+        <h2 class="terms__head">ПРАВИЛА ПОЛЬЗОВАНИЯ СЕРВИСОМ</h2>
+
+        <div class="terms__text">
+            <p class="terms__p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum fugit fugiat ab animi
+                omnis quo enim nobis mollitia blanditiis voluptates hic eaque iste vitae perferendis cumque molestiae
+                pariatur earum minus illum provident, totam deleniti corrupti! Quibusdam obcaecati voluptate similique
+                laborum optio dolor mollitia maxime asperiores iste. Sit iste, cupiditate, aut temporibus ab aliquam
+                totam earum in voluptates aliquid aspernatur consequuntur pariatur placeat tempora non, neque nam
+                tenetur quaerat nostrum voluptatum velit quas. Odit, explicabo maxime velit doloremque aut perspiciatis
+                repellendus laborum dignissimos magni tenetur aspernatur optio temporibus ab facilis voluptatem
+                laudantium, placeat suscipit officiis qui iure atque vero, ullam assumenda. Libero voluptas sunt dolorem
+                veritatis corporis saepe itaque impedit laborum laboriosam atque magnam earum fuga hic voluptatem, autem
+                facere reiciendis voluptates? Dolores, ut tempora dolorem praesentium mollitia dolor iste enim harum
+                quaerat quia aspernatur? Vitae totam tempore aut optio! Ea inventore aliquid libero aperiam officiis
+                suscipit omnis, voluptate fugiat tempore.</p>
+            <p class="terms__p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos harum quae optio
+                autem omnis cumque qui minus vel blanditiis magnam, rerum id vitae fuga beatae quas quia distinctio
+                exercitationem quasi quisquam accusantium, laudantium quidem dicta nisi? Voluptatem unde autem officia
+                ipsum quisquam, facere laudantium suscipit explicabo minima dolore quod esse?</p>
+            <p class="terms__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia nihil itaque
+                consectetur quo! Recusandae beatae nihil dolore quisquam molestiae officia? Itaque vel ducimus aliquid
+                sequi aspernatur minus voluptas nobis quia ullam iure in adipisci quasi voluptatibus optio rem dolores
+                soluta, minima quaerat tenetur expedita id dicta! Quae repellat corrupti, odit ratione eius fugiat
+                consequuntur ab accusamus rem ut expedita culpa, corporis velit ipsum. Animi minima molestiae et
+                placeat. Iure, eos! Dicta dignissimos tempore animi repellat quo sapiente? Alias, rem sunt, nobis nisi
+                unde quos quibusdam fugiat sit voluptatum libero expedita. Eum dolores inventore temporibus neque
+                distinctio debitis nihil culpa magni!</p>
+        </div>
+
+        <form th:method="GET" th:action="@{/index/getemptyform}">
+
+            <div class="form-check terms__check terms__check-confirm">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label terms__label terms__label-confirm" for="flexCheckDefault">Я подтверждаю
+                    своё согласие с правилами пользования сервисом</label>
+            </div>
+
+            <div class="form-check terms__check">
+                <input class="form-check-input" type="checkbox" value="" id="confirm">
+                <label class='form-check-label terms__label' for='#confirm'>
+                    Я принимаю условия
+                    <a target="_blank" href="/pages/40">Пользовательского соглашения</a>
+                    и даю согласие на обработку своих персональных данных в соответствии с
+                    <a target="_blank" href="/pages/39">Политикой конфиденциальности.</a>
+                </label>
+            </div>
+
+            <div>
+                <button type="submit" class="col-sm-3 btn btn-primary terms__btn">Подтверждаю</button>
+                <span class="col-sm-9 terms__btn-label">Нажимая кнопку "Подтверждаю", Вы соглашаетесь с правилами использования сервиса</span>
+            </div>
+
+        </form>
+
+    </div>
+</main>
+
+<footer class="footer mt-auto py-3 bg-light main-footer"></footer>
+
+<script th:src="@{/scripts/footer.js}"></script>
+<script th:src="@{/scripts/header.js}"></script>
+
+
+</body>
+</html>

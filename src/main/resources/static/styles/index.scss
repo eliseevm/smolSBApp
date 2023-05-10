@@ -1,0 +1,64 @@
+$special: #c3ebda;
+$main: #596B64;
+$extra: #98B8AB;
+
+html,
+body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  min-width: 1400px;
+}
+
+.wrapper {
+  min-height: 100%;
+}
+
+
+
+@import 'norm';
+@import "header";
+@import 'introduction';
+@import 'main-footer';
+@import 'med-form';
+@import 'terms';
+
+h1 {
+  font-size: 1.5rem;
+}
+
+.main-btn {
+  background-color: $special;
+  color: $main;
+  border-color: $special;
+  width: 200px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.main-btn:hover {
+  background-color: $extra;
+  border-color: $extra;
+}
+
+@media screen and (max-width: 575px) {
+  .container {
+    width: 360px;
+  }
+
+  .terms__check {
+    justify-content: center;
+  }
+
+  terms__btn-confirm {
+    justify-content: center;
+  }
+
+  terms__btn {
+    margin-bottom: 10px;
+  }
+
+  terms__btn-label {
+    margin-top: 10px;
+  }
+
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Подтверждение удаления данных о пользователе</title>
+</head>
+<body>
+<h2> Для завершения удаления данных </h2>
+<form th:action="@{/logout}" th:method="POST">
+  <input type="submit" value="Пожалуйста подтвердите удаление !"/>
+</form>
+<br/>
+<br/>
+<h2> Вы все еще можете </h2>
+<form th:method="GET" th:action="@{/index/editform}"
+      th:object="${nemo}">
+  <input type="submit" value="Восстановить данные!"/>
+</form>
+</body>
+</html>

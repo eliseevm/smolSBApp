@@ -1,0 +1,30 @@
+.introduction {
+  // min-height: 100%;
+  // margin: 0 auto;
+  // padding-top: 80px;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // text-align: center;
+
+  // width: 600px;
+
+  &__text {
+    margin-top: 20px;
+    color: $main;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: justify;
+  }
+
+  &__head {
+    color: $main;
+    font-size: 1.8rem;
+    line-height: 1.5;
+  }
+
+  &__btn {
+    margin-bottom: 50px;
+  }
+
+}

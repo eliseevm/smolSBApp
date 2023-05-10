@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Вывод данных о пользователе</title>
+</head>
+<body>
+
+<p th:text="${nemo.getSurname()}">VALUE</p>
+<p th:text="${nemo.getEmail()}">VALUE</p>
+<p th:text="${nemo.getBirthday()}">VALUE</p>
+<p th:text="${nemo.getMedic_polys()}">VALUE</p>
+<p th:text="${nemo.getEmergency_phone()}">VALUE</p>
+<p th:text="${nemo.getPlace_of_residence()}">VALUE</p>
+<p th:text="${nemo.getRh_factor()}">VALUE</p>
+<p th:text="${nemo.getBlood_type()}">VALUE</p>
+<p th:text="${nemo.getAllergy()}">VALUE</p>
+<p th:text="${nemo.getChronic_diseases()}">VALUE</p>
+<p th:text="${nemo.getMetal_implants()}">VALUE</p>
+<p th:text="${nemo.getElectronic_implants()}">VALUE</p>
+<p th:text="${nemo.getNecessary_medicines()}">VALUE</p>
+<p th:text="${nemo.getCreate_date()}">VALUE</p>
+
+
+<form th:method="DELETE" th:action="@{/index/deleteForm}"
+      th:object="${nemo}">
+    <input type="submit" value="Удалить !"/>
+</form>
+
+<br/>
+<br/>
+<form th:method="GET" th:action="@{/index/editform}"
+      th:object="${nemo}">
+    <input type="submit" value="Редактировать !"/>
+</form>
+<br/>
+<br/>
+<form th:action="@{/logout}" th:method="POST">
+    <input type="submit" value="Выход !"/>
+</form>
+</body>
+</html>

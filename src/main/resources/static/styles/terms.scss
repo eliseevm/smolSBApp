@@ -1,0 +1,73 @@
+.terms {
+  // padding: 4% 10% 7% 10%;
+
+  &__head {
+    color: $main;
+    text-align: center;
+    font-size: 1.7rem;
+  }
+
+  &__text {
+    color: $main;
+    margin-top: 50px;
+    text-align: justify;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  &__p {
+    text-indent: 30px;
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+
+  &__check {
+    margin-top: 30px;
+    padding-left: 12%;
+    padding-right: 10%;
+  }
+
+  &__label {
+    color: $main;
+    padding-left: 15px;
+    font-weight: 500;
+  }
+
+  &__btn-confirm {
+    margin-top: 50px;
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 100px;
+  }
+
+  &__btn-label {
+    color: $main;
+    font-weight: 500;
+    align-self: center;
+    padding-left: 15px;
+    text-align: justify;
+  }
+
+  &__check-confirm {
+    position: relative;
+  }
+
+  &__label-confirm {
+    position: absolute;
+    top: 5px;
+  }
+
+  &__btn {
+    background-color: $special;
+    color: $main;
+    border-color: $special;
+    width: 200px;
+  }
+
+  &__btn:hover {
+    background-color: $extra;
+    border-color: $extra;
+  }
+
+}

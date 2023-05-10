@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Форма для заполнения данными о пользователе</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/styles/index.css}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+
+
+</head>
+
+<body class="d-flex flex-column h-100">
+
+<header class="p-3 mb-3 border-bottom header__wrapper"></header>
+
+<main class="flex-shrink-0">
+    <div class="container med-form">
+
+        <h2 class="med-form__head">ЗАПОЛНИТЕ НЕОБХОДИМЫЕ ДАННЫЕ</h2>
+
+        <form th:method="POST" th:action="@{/index/reg}" th:object="${emptyform}">
+
+
+            <div class="mb-3 row">
+                <label for="names" class="col-sm-4 col-form-label col-form-label-lg med-form__label">Логин-Имя</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control form-control-lg" th:field="*{username}" id="names"/>
+                </div>
+                <div class="col-auto med-form__help">
+              <span id="passwordHelpInline" class="form-text med-form__label">
+                Логин должен состоять из 4-20 символов
+              </span>
+                </div>
+                <div class="med-form__error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Введите
+                    корректное имя
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="password" class="col-sm-4 col-form-label col-form-label-lg med-form__label">Пароль</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control form-control-lg" th:field="*{password}" id="password"/>
+                </div>
+                <div class="col-auto med-form__help">
+              <span id="passwordHelpInline" class="form-text med-form__label">
+                Пароль должен состоять из 4-20 символов
+              </span>
+                </div>
+                <div class="med-form__error " th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Неверный
+                    пароль
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="surname" class="col-sm-4 col-form-label col-form-label-lg med-form__label">Фамилия</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control form-control-lg" th:field="*{surname}" id="surname"/>
+                </div>
+                <div class="med-form__error" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">Введите
+                    корректеую фамилию
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="email" class="col-sm-4 col-form-label col-form-label-lg med-form__label">Е-почта</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control form-control-lg" th:field="*{email}" id="email"/>
+                </div>
+                <div class="med-form__error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Введите
+                    корректеую почту
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="birthday" class="col-sm-4 col-form-label col-form-label-lg med-form__label">День
+                    рождения</label>
+                <div class="col-sm-8">
+                    <input type="date" class="form-control form-control-lg" th:field="*{birthday}" id="birthday"/>
+                </div>
+                <div class="med-form__error" th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}">Введите
+                    корректный День рождения
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="medic_polys" class="col-sm-4 col-form-label col-form-label-lg med-form__label">Полис
+                    медицинского страхования</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control form-control-lg" th:field="*{medic_polys}" id="medic_polys"/>
+                </div>
+                <div class="med-form__error" th:if="${#fields.hasErrors('medic_polys')}" th:errors="*{medic_polys}">
+                    Введите корректный номер полиса
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="emergency_phone" class="col-sm-4 col-form-label col-form-label-lg med-form__label">Телефон
+                    доверенного лица</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control form-control-lg" th:field="*{emergency_phone}"
+                           id="emergency_phone"/>
+                </div>
+                <div class="med-form__error" th:if="${#fields.hasErrors('emergency_phone')}"
+                     th:errors="*{emergency_phone}">Введите корректный номер
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="place_of_residence" class="col-sm-4 col-form-label col-form-label-lg med-form__label">Место
+                    проживания</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control form-control-lg" th:field="*{place_of_residence}"
+                           id="place_of_residence"/>
+                </div>
+                <div class="med-form__error" th:if="${#fields.hasErrors('place_of_residence')}"
+                     th:errors="*{place_of_residence}">Введите адреса или координаты
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="rh_factor"
+                       class="col-sm-4 col-form-label col-form-label-lg med-form__label">Резус-фактор</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control form-control-lg" th:field="*{rh_factor}" id="rh_factor"/>
+                </div>
+                <div class="med-form__error" th:if="${#fields.hasErrors('rh_factor')}" th:errors="*{rh_factor}">Ошибка
+                    ввода
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="blood_type" class="col-sm-4 col-form-label col-form-label-lg med-form__label">Группа
+                    крови</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control form-control-lg" th:field="*{blood_type}" id="blood_type"/>
+                </div>
+                <div class="med-form__error" th:if="${#fields.hasErrors('blood_type')}" th:errors="*{blood_type}">Ошибка
+                    ввода
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="allergy" class="col-sm-4 col-form-label col-form-label-lg med-form__label">Аллергии</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control form-control-lg" th:field="*{allergy}" id="allergy"></textarea>
+                </div>
+                <div class="med-form__error" th:if="${#fields.hasErrors('allergy')}" th:errors="*{allergy}">Ошибка
+                    ввода
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="medical_contraindications"
+                       class="col-sm-4 col-form-label col-form-label-lg med-form__label">Медицинские
+                    противопоказания</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control form-control-lg" rows="3" th:field="*{medical_contraindications}"
+                              id="medical_contraindications"></textarea>
+                </div>
+                <div class="med-form__error" th:if="${#fields.hasErrors('medical_contraindications')}"
+                     th:errors="*{medical_contraindications}">Ошибка ввода
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="chronic_diseases" class="col-sm-4 col-form-label col-form-label-lg med-form__label">Хронические
+                    заболевания</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control form-control-lg" rows="3" th:field="*{chronic_diseases}"
+                              id="chronic_diseases"></textarea>
+                </div>
+                <div class="med-form__error" th:if="${#fields.hasErrors('chronic_diseases')}"
+                     th:errors="*{chronic_diseases}">Ошибка ввода
+                </div>
+            </div>
+
+
+            <div class="mb-3 row">
+                <label for="metal_implants" class="col-sm-4 col-form-label col-form-label-lg med-form__label">Металлические
+                    импланты</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control form-control-lg" rows="3" th:field="*{metal_implants}"
+                              id="metal_implants"></textarea>
+                </div>
+                <div class="med-form__error" th:if="${#fields.hasErrors('metal_implants')}"
+                     th:errors="*{metal_implants}">Ошибка ввода
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="electronic_implants" class="col-sm-4 col-form-label col-form-label-lg med-form__label">Электрические
+                    импланты</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control form-control-lg" rows="3" th:field="*{electronic_implants}"
+                              id="electronic_implants"></textarea>
+                </div>
+                <div class="med-form__error" th:if="${#fields.hasErrors('electronic_implants')}"
+                     th:errors="*{electronic_implants}">Ошибка ввода
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="necessary_medicines" class="col-sm-4 col-form-label col-form-label-lg med-form__label">Принимаемые
+                    лекарства</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control form-control-lg" rows="3" th:field="*{necessary_medicines}"
+                              id="necessary_medicines"></textarea>
+                </div>
+                <div class="med-form__error" th:if="${#fields.hasErrors('necessary_medicines')}"
+                     th:errors="*{necessary_medicines}">Ошибка ввода
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary main-btn">Сохранить</button>
+
+        </form>
+
+    </div>
+</main>
+
+<footer class="footer mt-auto py-3 bg-light main-footer"></footer>
+
+<script th:src="@{/scripts/footer.js}"></script>
+<script th:src="@{/scripts/header.js}"></script>
+
+</body>
+</html>
