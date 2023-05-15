@@ -3,7 +3,6 @@ package ru.max.str.smolSBApp.models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
-import org.hibernate.validator.constraints.UniqueElements;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;

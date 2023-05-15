@@ -32,10 +32,11 @@ public class NemoService {
     }
 
     public Nemo findOne() {
-        SecurityContext context = SecurityContextHolder.getContext();
-        Authentication authentication = context.getAuthentication();
-        NemoDetails principal = (NemoDetails) authentication.getPrincipal();
-        Nemo nemo = principal.getNemo();
+            SecurityContext context = SecurityContextHolder.getContext();
+            Authentication authentication = context.getAuthentication();
+            NemoDetails principal = (NemoDetails) authentication.getPrincipal();
+        System.out.println("Печатаю состояние принципала" + principal.toString());
+            Nemo nemo = principal.getNemo();
         return nemo;
     }
 
