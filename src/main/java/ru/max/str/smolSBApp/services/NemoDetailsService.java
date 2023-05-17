@@ -13,21 +13,21 @@ import ru.max.str.smolSBApp.security.NemoDetails;
 import java.util.Optional;
 
 @Service
-public class PersonDetailsService implements UserDetailsService {
+public class NemoDetailsService implements UserDetailsService {
 
     private final NemoRepository nemoRepository;
 
     @Autowired
-    public PersonDetailsService(NemoRepository nemoRepository) {
+    public NemoDetailsService(NemoRepository nemoRepository) {
         this.nemoRepository = nemoRepository;
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<Nemo> person = nemoRepository.findByUsername(username);
+        Optional<Nemo> nemo = nemoRepository.findByUsername(username);
 
-        if (person.isEmpty()) throw new UsernameNotFoundException("Здесь ничего нет");
+        if (nemo.isEmpty()) throw new UsernameNotFoundException("Пользователь не найден !");
 
-        return new NemoDetails(person.get());
+        return new NemoDetails(nemo.get());
     }
 }
