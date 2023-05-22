@@ -2,10 +2,10 @@ version: '3.8'
 
 services:
   postgres:
-      build:
-        context: services/postgres
-        dockerfile: Dockerfile
       image: maximstr/post_db
+      build:
+        context: docker/services/postgres
+        dockerfile: Dockerfile
       ports:
         - "5432:5432"
       environment:
@@ -15,17 +15,19 @@ services:
       volumes:
         - db-data:/var/lib/postgresql/db-data
       restart: always
-  app:
-    build:
-      context: services/app
-      dockerfile: Dockerfile
-    environment:
-      - PORT=8080
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/medic
 
+  app:
     image: maximstr/java-application
+    build:
+      context: docker/services/app
+      dockerfile: Dockerfile
     ports:
-      - "8080:8080"
+        - "8080:8080"
+    restart: always
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/medic
+      - SPRING_DATASOURCE_USERNAME=kitty
+      - SPRING_DATASOURCE_PASSWORD=purrrrrr
 
     depends_on:
       - postgres
