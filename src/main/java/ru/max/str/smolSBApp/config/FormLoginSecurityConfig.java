@@ -44,7 +44,7 @@ public class FormLoginSecurityConfig {
         return auth.getAuthenticationManager();
     }
 
-    // Кодировка паролей
+    // Кодировка паролей.
     @Bean
     public PasswordEncoder getPasswordEncoder() {
         return new BCryptPasswordEncoder();
