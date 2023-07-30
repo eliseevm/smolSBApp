@@ -38,7 +38,7 @@ public class FormLoginSecurityConfig {
         return http.build();
     }
 
-    //  Настройка аутентификации
+    //  Настройка аутентификации.
     @Bean
     protected AuthenticationManager authenticationManager(AuthenticationConfiguration auth) throws Exception {
         return auth.getAuthenticationManager();
