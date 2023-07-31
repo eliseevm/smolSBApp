@@ -51,9 +51,9 @@ public class IndexController {
     public String createNewNemo(@ModelAttribute("emptyform")
                                 @Valid Nemo nemo, BindingResult bindingResult, Model model) {
         nemoValidator.validate(nemo, bindingResult);
-        if (bindingResult.hasErrors()) {
+        if (bindingResult.hasErrors())
             return "empty_form";
-        }
+
         nemoService.createUser(nemo);
         model.addAttribute("nemo", nemoService.findOne());
 
@@ -72,9 +72,9 @@ public class IndexController {
     public String update(@ModelAttribute("editform")
                          @Valid Nemo nemo, BindingResult bindingResult, Model model) {
 
-        if (bindingResult.hasErrors()) {
+        if (bindingResult.hasErrors())
             return "show_form_for_edit";
-        }
+
         nemoService.update(nemo);
         model.addAttribute("nemo", nemo);
         return "redirect:/select/sign_in";
